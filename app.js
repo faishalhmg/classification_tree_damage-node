@@ -7,14 +7,14 @@ const { createCanvas, loadImage } = require('canvas');
 
 
 const app = express();
-const PORT = 3000;
+const PORT = 80;
 
 // Gunakan middleware untuk mengurai data formulir dari permintaan POST
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Muat model TensorFlow.js dari file yang sudah dikonversi
-const modelPath = '../train320no4/export/tfjsmodel/model.json';
+const modelPath = 'tfjsmodel/model.json';
 let model;
 
 tf.loadGraphModel(`file://${modelPath}`)
